@@ -1,0 +1,1 @@
+FiveHundredAuthenticator.configure(Settings.fivehundred || {})
