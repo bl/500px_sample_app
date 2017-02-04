@@ -14,7 +14,7 @@ class FiveHundredClient
   private
 
   def request(params)
-    JSON.parse(http_request(params))
+    JSON.parse(http_request(params)).with_indifferent_access
   end
 
   def http_request(params)
