@@ -1,24 +1,5 @@
-# README
+# 500px Sample App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### This app can be viewed running here: https://intense-sierra-19727.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a simple Rails web app making use of 500px's API. I'm using this as a testbed for a handful of ideas (including RESTful API client/auth encapsulation, ActiveRecord-like ORM integration, etc).
