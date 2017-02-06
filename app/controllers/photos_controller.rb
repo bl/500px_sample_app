@@ -1,10 +1,11 @@
 class PhotosController < ApplicationController
+  before_action :set_page, only: [:index]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.popular
+    @photos = Photo.popular(@page)
   rescue FiveHundred::ApiException => e
     @photos = []
     flash[:alert] = e.error
@@ -65,6 +66,11 @@ class PhotosController < ApplicationController
   end
 
   private
+
+    def set_page
+      @page = params[:page].try!(:to_i) || 1
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])

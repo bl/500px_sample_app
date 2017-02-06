@@ -12,8 +12,8 @@ class Photo < FiveHundred::Orm
   end
 
   class << self
-    def popular
-      resources = pluralized_client.index(feature: :popular)
+    def popular(page = 1)
+      resources = pluralized_client.index(feature: :popular, page: page)
       resources[class_name.pluralize].map do |resource|
         self.new(resource)
       end
