@@ -5,6 +5,9 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = Photo.popular
+  rescue FiveHundred::ApiException => e
+    @photos = []
+    flash[:alert] = e.error
   end
 
   # GET /photos/1
