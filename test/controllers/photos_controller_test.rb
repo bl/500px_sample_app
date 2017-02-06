@@ -3,6 +3,7 @@ require 'test_helper'
 class PhotosControllerTest < ActionDispatch::IntegrationTest
   setup do
     #@photo = photos(:one)
+    FiveHundred::Client.any_instance.stubs(:index).with(feature: :popular).returns(popular_response)
   end
 
   test "should get index" do
@@ -44,5 +45,11 @@ class PhotosControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to photos_url
+  end
+
+  private
+
+  def popular_response
+    @popular_response||= JSON.parse(assert_for(:photos, 'popular.json')).with_indifferent_access
   end
 end
