@@ -1,1 +1,1 @@
-FiveHundredAuthenticator.configure(Settings.fivehundred || {})
+FiveHundred::Authenticator.configure(Settings.fivehundred || {})

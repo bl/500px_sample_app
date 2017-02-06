@@ -8,6 +8,10 @@ class Photo
     @data = attributes
   end
 
+  def persisted?
+    id.present?
+  end
+
   def attributes
     {
       id: id,
@@ -27,11 +31,11 @@ class Photo
     end
 
     def client
-      @client ||= FiveHundredClient.new(class_name)
+      @client ||= FiveHundred::Client.new(class_name)
     end
 
     def pluralized_client
-      @client ||= FiveHundredClient.new(class_name.pluralize)
+      @pluralized_client ||= FiveHundred::Client.new(class_name.pluralize)
     end
 
     def popular
