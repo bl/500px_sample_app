@@ -1,25 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Photos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @photos.each_slice(4) do |slice| %>
+  <div class="row">
+    <% slice.each do |photo| %>
+      <div class="col-ms-3">
+        <%= render photo %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Photo', new_photo_path %>
+  </div>
+<% end %>

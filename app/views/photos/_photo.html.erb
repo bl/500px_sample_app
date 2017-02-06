@@ -1,0 +1,6 @@
+<div class="photo">
+  <h4><%= photo.name %></h4>
+  <% photo.images.each do |image| %>
+    <%= image_tag image.url, class: "img-thumbnail" %>
+  <% end %>
+</div>

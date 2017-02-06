@@ -25,6 +25,12 @@ gem 'rest-client', '~> 2.0'
 gem 'oauth', '~> 0.5'
 # config used for loading sensitive data from environment
 gem 'config'
+# twitter bootstrap for rails
+gem 'bootstrap', '~> 4.0.0.alpha6'
+# tether necessary for bootstrap tooltips & popovers
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

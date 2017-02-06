@@ -1,5 +1,5 @@
 class Photo < FiveHundred::Orm
-  orm_attr :id, :user_id, :to_whom_user_id, :body, :created_at, :parent_id, :user
+  orm_attr :id, :name, :description, :user_id, :to_whom_user_id, :body, :created_at, :parent_id, :user
 
   # TODO: resolve this to work with pluralized associations
   #has_many :image
