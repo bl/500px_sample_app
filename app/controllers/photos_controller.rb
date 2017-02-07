@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.popular(@page)
+    @photos = Photo.index(page: @page)
     respond_to do |format|
       format.html { render :index }
       format.js
