@@ -1,5 +1,5 @@
 class Photo < FiveHundred::Orm
-  orm_attr :id, :name, :description, :user_id, :to_whom_user_id, :body, :created_at, :parent_id, :user
+  orm_attr :id, :name, :description, :user_id, :to_whom_user_id, :body, :created_at, :parent_id
 
   # TODO: resolve this to work with pluralized associations
   #has_many :image
@@ -9,6 +9,10 @@ class Photo < FiveHundred::Orm
     @images ||= @data[:images].map do |image|
       Image.new(image)
     end
+  end
+
+  def user
+    @user ||= User.new(@data[:user])
   end
 
   class << self

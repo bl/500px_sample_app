@@ -19,4 +19,23 @@ body {
 
 .photo {
   margin: 1rem 0.5rem;
+  position: relative;
+}
+
+#hoverbox {
+  position: absolute;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.blur {
+  -webkit-filter: blur(2px) brightness(120%) grayscale(50%);
+  -moz-filter: blur(2px) brightness(120%) grayscale(50%);
+  -o-filter: blur(2px) brightness(120%) grayscale(50%);
+  -ms-filter: blur(2px) brightness(120%) grayscale(50%);
+  filter: blur(2px) brightness(120%) grayscale(50%);
+  z-index: -1;
 }

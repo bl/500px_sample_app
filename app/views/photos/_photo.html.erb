@@ -1,6 +1,11 @@
 <div class="photo">
-  <h4><%= photo.name %></h4>
-  <% photo.images.each do |image| %>
-    <%= image_tag image.url, class: "img-thumbnail" %>
-  <% end %>
+  <div id="hoverbox" class="hidden align-self-center justify-content-center">
+    <p id="name"><%= photo.name %></p>
+    <p id="author"><%= photo.user.fullname %></p>
+  </div>
+  <div class="photo-images">
+    <% photo.images.each do |image| %>
+      <%= image_tag image.url, class: "img-thumbnail" %>
+    <% end %>
+  </div>
 </div>
