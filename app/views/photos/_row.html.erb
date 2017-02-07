@@ -1,9 +1,5 @@
-<% @photos.each_slice(4) do |slice| %>
-  <div class="row">
-    <% slice.each do |photo| %>
-      <div class="col-ms-3">
-        <%= render photo %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<div class="photos-container">
+  <% @photos.each do |photo| %>
+    <%= render photo %>
+  <% end %>
+</div>

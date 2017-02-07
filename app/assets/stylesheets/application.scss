@@ -11,31 +11,69 @@
  * It is generally better to create a new file per style scope.
  *
  */
+$enable-flex: true;
 @import "bootstrap";
 
 body {
   padding-top: 4rem;
 }
 
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px;
+}
+
+.photos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .photo {
+  #info {
+    p {
+      color: white;
+    }
+
+    #name {
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+    }
+
+    #author {
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+    }
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  img {
+    height: 300px;
+  }
+
   margin: 1rem 0.5rem;
   position: relative;
 }
 
-#hoverbox {
-  position: absolute;
-  z-index: 1;
-}
 
 .hidden {
   display: none;
 }
 
 .blur {
-  -webkit-filter: blur(2px) brightness(120%) grayscale(50%);
-  -moz-filter: blur(2px) brightness(120%) grayscale(50%);
-  -o-filter: blur(2px) brightness(120%) grayscale(50%);
-  -ms-filter: blur(2px) brightness(120%) grayscale(50%);
-  filter: blur(2px) brightness(120%) grayscale(50%);
+  -webkit-filter: blur(2px) brightness(80%) grayscale(50%);
+  -moz-filter: blur(2px) brightness(80%) grayscale(50%);
+  -o-filter: blur(2px) brightness(80%) grayscale(50%);
+  -ms-filter: blur(2px) brightness(80%) grayscale(50%);
+  filter: blur(2px) brightness(80%) grayscale(50%);
   z-index: -1;
 }
